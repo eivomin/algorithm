@@ -4,14 +4,14 @@ import java.io.*;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        Stack<Integer> stack = new Stack<>();
-
         int K = Integer.parseInt(br.readLine());
 
+        Stack<Integer> stack = new Stack<>();
+
         for(int i=0; i<K; i++){
-            int a = Integer.parseInt(br.readLine());
-            if(a != 0)
-                stack.push(a);
+            int tmp = Integer.parseInt(br.readLine());
+            if(tmp != 0)
+                stack.add(tmp);
             else
                 stack.pop();
         }
@@ -19,8 +19,6 @@ public class Main {
         int sum = 0;
         while(!stack.isEmpty())
             sum += stack.pop();
-
         System.out.println(sum);
-        br.close();
     }
 }
